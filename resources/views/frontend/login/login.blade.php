@@ -10,10 +10,10 @@
 </head>
 
 <body>
-
     <div class="container" id="container">
         <div class="form-container sign-up">
-            <form>
+            <form action="{{ route('daftar') }}" method="post">
+            @csrf
                 <h1>Create Account</h1>
                 <div class="social-icons">
                     <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
@@ -22,14 +22,15 @@
                     <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
                 <span>or use your email for registration</span>
-                <input type="text" placeholder="Nama">
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Password">
-                <button type="button">Sign up</button>
+                <input type="text" name="nama" id="nama" placeholder="Nama" >
+                <input type="email" name="email" id="email" placeholder="Email" >
+                <input type="password" name ="password" id="password" placeholder="Password" >
+                <button type="submit">Sign up</button>
             </form>
         </div>
         <div class="form-container sign-in">
-            <form>
+            <form action="{{ route('masuk') }}" method="post"> <!-- Perbaikan 1: action dan method di form -->
+                @csrf <!-- Perbaikan 2: CSRF token untuk keamanan form Laravel -->
                 <h1>Sign in</h1>
                 <div class="social-icons">
                     <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
@@ -38,10 +39,10 @@
                     <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
                 <span>or use your email for password</span>
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Password">
+                <input type="email" placeholder="Email" name="email" id="email"> <!-- Perbaikan 3: name pada input -->
+                <input type="password" placeholder="Password" name="password" id="password"> <!-- Perbaikan 4: name pada input -->
                 <a href="#">Forget Your Password?</a>
-                <button type="button">Sign in</button>
+                <button type="submit">Sign in</button> <!-- Perbaikan 5: type submit untuk tombol sign in -->
             </form>
         </div>
         <div class="toggle-container">
@@ -61,17 +62,17 @@
     </div>
 
     <script>
-            const container = document.getElementById('container');
-            const registerBtn = document.getElementById('register');
-            const loginBtn = document.getElementById('login');
+        const container = document.getElementById('container');
+        const registerBtn = document.getElementById('register');
+        const loginBtn = document.getElementById('login');
 
-            registerBtn.addEventListener('click', () => {
-                container.classList.add("active");
-            });
+        registerBtn.addEventListener('click', () => {
+            container.classList.add("active");
+        });
 
-            loginBtn.addEventListener('click', () => {
-                container.classList.remove("active");
-            });
+        loginBtn.addEventListener('click', () => {
+            container.classList.remove("active");
+        });
     </script>
 </body>
 

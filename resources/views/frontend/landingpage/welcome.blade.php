@@ -91,9 +91,7 @@
                             <a href="" class="btn btn-outline-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Hubungi kami</a>
                         </div>
                         <div class="col-lg-6 text-center text-lg-start">
-                            <img style="margin-left: 30px;" class="img-fluid" src="img/team-3.jpg" alt="">
-                                <h5 style="color: white; padding: 10px; font-size: 10mm;" class="fw-bold m-0">Muhammad Fajar Dwi Putra</h5>
-                                <small style="padding: 10px; color: white; font-size: 5mm;">Project Manager</small>
+                            <img class="img-fluid" src="img/hero.png" alt="">
                         </div>
                         <div></div>
                       
