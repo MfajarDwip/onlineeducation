@@ -30,8 +30,9 @@ class LoginController extends Controller
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
             Session::flash('berhasil', 'Login berhasil!');
+            Session::put('username',$user->name);
             if ($user->role == 'admin') {
-                return redirect()->route('home');
+                return redirect()->route('dashboard_admin');
             } elseif ($user->role == 'user') {
                 return redirect()->route('dashboard');
             }

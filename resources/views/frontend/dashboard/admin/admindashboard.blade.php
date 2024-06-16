@@ -1,0 +1,1 @@
+@extends('frontend.dashboard.template-headeradmin')
